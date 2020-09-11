@@ -1,8 +1,10 @@
 //set up mongoose connection
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 // Mongo Connection String
-mongoose.connect('mongodb://localhost/bountyhunters', {
+mongoose.connect(process.env.ATLAS_URI
+ ||'mongodb://localhost/bountyhunters', {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
     useFindAndModify: false
